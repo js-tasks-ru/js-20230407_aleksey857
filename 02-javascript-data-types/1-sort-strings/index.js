@@ -8,12 +8,12 @@ import {re} from "@babel/core/lib/vendor/import-meta-resolve";
  **/
 export function sortStrings(arr, param = 'asc') {
   function compareStr(a, b) {
-    return a.localeCompare(b, ["ru", "en"], {caseFirst: "upper"});
+    if (param === 'asc') {
+      return a.localeCompare(b, ["ru", "en"], {caseFirst: "upper"});
+    } else {
+      return b.localeCompare(a, ["ru", "en"], {caseFirst: "upper"});
+    }
   }
 
-  if (param === 'desc') {
-    return Array.from(arr).sort(compareStr).reverse();
-  } else {
-    return Array.from(arr).sort(compareStr);
-  }
+  return Array.from(arr).sort(compareStr);
 }
