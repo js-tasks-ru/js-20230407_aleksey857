@@ -8,7 +8,7 @@ export function invertObj(obj) {
     const result = {};
 
     if (typeof obj === "undefined") {
-      return undefined;
+      return;
     }
 
     const objEntries = Object.entries(obj);

@@ -5,14 +5,22 @@
  */
 export function createGetter(path) {
   const pathList = path.split('.');
+
   return function (obj) {
     let tmpObj = obj;
+
     for (const el of pathList) {
-      if (!tmpObj.hasOwnProperty(el)) {
-        return undefined;
-      }
+
+      // if (!Object.hasOwn(tmpObj, el)) {
+      // if (!tmpObj[el]) {
+      //   return;
+      // }
+
+      if (tmpObj === undefined) break;
+
       tmpObj = tmpObj[el];
     }
+
     return tmpObj;
   };
 }
