@@ -24,14 +24,15 @@
         data: ordersData,
         label: 'orders',
         value: 344,
-        link: '#'
+        // 4 test
+        link: 'https://ya.ru'
       });
 
       const salesChart = new ColumnChart({
         data: salesData,
         label: 'sales',
         value: 243437,
-        formatHeading: data => `$${data}`
+        formatHeading: data => `${data}`
       });
 
       const customersChart = new ColumnChart({
@@ -40,9 +41,19 @@
         value: 321
       });
 
-      orders.append(ordersChart.element);
-      sales.append(salesChart.element);
-      customers.append(customersChart.element);
+      // document.querySelector('#orders')
+      // document.getElementById('orders')
+      // document.querySelectorAll('#orders')
+      // document.querySelector('[data-element="body"]')
+
+      // orders.append(ordersChart.element);
+      document.querySelector('#orders').append(ordersChart.element);
+
+      // sales.append(salesChart.element);
+      document.getElementById('sales').append(salesChart.element);
+
+      // customers.append(customersChart.element);
+      document.getElementById('customers').append(customersChart.element);
     </script>
   </body>
 </html>
