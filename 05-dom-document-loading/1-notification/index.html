@@ -5,17 +5,34 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<button id="btn1">Show simple message!</button>
+<body>
+  <button id="btn1">Show Success message!</button>
+  <button id="btn2">Show Error message!</button>
+</body>
 
 <script type="module">
-  import NotificationMessage from './index.js';
+  import NotificationMessage from './index.js'
 
-  btn1.addEventListener('click', () => {
-    const notification = new NotificationMessage('Hello World', {
-      duration: 2000,
+  const btn1 = document.querySelector('#btn1');
+  const btn2 = document.querySelector('#btn2');
+
+  btn1.addEventListener('click', (event) => {
+    const notification = new NotificationMessage('success message ' + Math.random(), {
+      duration: 8000,
       type: 'success'
     });
 
     notification.show();
-  });
+    // console.log(event);
+  })
+
+  btn2.addEventListener('click', (event) => {
+    const notification = new NotificationMessage('error message ' + Math.random(), {
+      duration: 8000,
+      type: 'error'
+    });
+
+    notification.show();
+    // console.log(event);
+  })
 </script>
