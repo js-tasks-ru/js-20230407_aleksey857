@@ -2,11 +2,13 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <title>Test</title>
 </head>
 <body>
 
 <div>
   <div>
+    <label for="field">Выбирите поле для сортировки</label>
     <select id="field">
       <option selected value="title">title</option>
       <option value="quantity">quantity</option>
@@ -15,6 +17,7 @@
     </select>
   </div>
   <div>
+    <label for="order">Выибирете порядок сортировки</label>
     <select id="order">
       <option selected value="asc">asc</option>
       <option value="desc">desc</option>
@@ -71,9 +74,12 @@
 
   const sortableTable = new SortableTable(headerConfig, data);
 
-  root.append(sortableTable.element);
+  const element_root = document.querySelector('#root')
+  // root.append(sortableTable.element);
+  element_root.append(sortableTable.element);
 
-  sort.addEventListener('click', () => {
+  const button_sort = document.querySelector('#sort')
+  button_sort.addEventListener('click', () => {
     const fieldValue = field.value;
     const orderValue = order.value;
 
