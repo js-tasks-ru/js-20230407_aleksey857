@@ -153,6 +153,8 @@ export default class SortableTable {
       result[name] = subElement;
     }
 
+    // eslint-disable-next-line no-debugger
+    // debugger;
     return result;
   }
 
