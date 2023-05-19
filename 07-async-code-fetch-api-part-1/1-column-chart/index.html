@@ -49,6 +49,7 @@
 
       loadOrders.addEventListener('click', () => {
         ordersChart.update(new Date(start.value), new Date(end.value))
+        console.log('start.value', start.value)
       });
 
       const salesChart = new ColumnChart({
@@ -58,7 +59,7 @@
           to
         },
         label: 'sales',
-        formatHeading: data => `$${data}`
+        formatHeading: data => `${data}`
       });
 
       const customersChart = new ColumnChart({
